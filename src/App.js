@@ -31,6 +31,7 @@ function reducer(state, { type, payload }) {
       return {
         ...state,
         currentOperand: `${state.currentOperand || ""}${payload.digit}`,
+        // currentOperand: `${state.currentOperand || ""}${payload.digit}`,
       };
     case ACTIONS.CHOOSE_OPERATION:
       if (state.currentOperand == null && state.previousOperand == null) {
@@ -71,6 +72,7 @@ function reducer(state, { type, payload }) {
       }
       if (state.currentOperand == null) return state;
       if (state.currentOperand.length === 1) {
+        // if (state.currentOperand.length === 1) {
         return { ...state, currentOperand: null };
       }
 
@@ -107,7 +109,7 @@ function evaluate({ currentOperand, previousOperand, operation }) {
     case "+":
       computation = prev + current;
       break;
-      
+
     case "-":
       computation = prev - current;
       break;
@@ -121,7 +123,7 @@ function evaluate({ currentOperand, previousOperand, operation }) {
       console.error("Invalid operator");
       break;
   }
-  console.log(computation)
+  console.log(computation);
 
   return computation.toString();
 }
