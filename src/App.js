@@ -30,8 +30,8 @@ function reducer(state, { type, payload }) {
       }
       return {
         ...state,
-        currentOperand: `${state.currentOperand || ""}${payload.digit}`,
         // currentOperand: `${state.currentOperand || ""}${payload.digit}`,
+        currentOperand: `${state.currentOperand || ""}${payload.digit}`,
       };
     case ACTIONS.CHOOSE_OPERATION:
       if (state.currentOperand == null && state.previousOperand == null) {
@@ -71,8 +71,8 @@ function reducer(state, { type, payload }) {
         };
       }
       if (state.currentOperand == null) return state;
+      // if (state.currentOperand.length === 1) {
       if (state.currentOperand.length === 1) {
-        // if (state.currentOperand.length === 1) {
         return { ...state, currentOperand: null };
       }
 
