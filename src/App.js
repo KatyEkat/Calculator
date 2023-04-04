@@ -30,7 +30,6 @@ function reducer(state, { type, payload }) {
       }
       return {
         ...state,
-        // currentOperand: `${state.currentOperand || ""}${payload.digit}`,
         currentOperand: `${state.currentOperand || ""}${payload.digit}`,
       };
     case ACTIONS.CHOOSE_OPERATION:
@@ -71,7 +70,6 @@ function reducer(state, { type, payload }) {
         };
       }
       if (state.currentOperand == null) return state;
-      // if (state.currentOperand.length === 1) {
       if (state.currentOperand.length === 1) {
         return { ...state, currentOperand: null };
       }
@@ -134,7 +132,6 @@ function App() {
     {}
   );
 
-  // dispatch({ type: ACTIONS.ADD_DIGIT, payload: { digit: 1 } });
   return (
     <div className="calculator-grid">
       <div className="output">
